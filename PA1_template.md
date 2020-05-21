@@ -53,26 +53,6 @@ Calculate the total number of steps taken per day
 
 ```r
 library(dplyr)
-```
-
-```
-## 
-## Attaching package: 'dplyr'
-```
-
-```
-## The following objects are masked from 'package:stats':
-## 
-##     filter, lag
-```
-
-```
-## The following objects are masked from 'package:base':
-## 
-##     intersect, setdiff, setequal, union
-```
-
-```r
 Steps_per_day <- ActivityData %>%
   group_by(date)%>%
   summarise(stepsperday = sum(steps, na.rm = TRUE))
@@ -92,7 +72,7 @@ ggplot(data = Steps_per_day, aes(stepsperday))+
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png)
 
 Calculate and report the mean and median of the total number of steps taken per day
 
@@ -126,7 +106,7 @@ Activity2 <- ActivityData %>%
 plot(x = Activity2$interval ,y = Activity2$averageSteps , type = "l", xlab = "interval across all day",ylab = "Average steps across all day")
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+![plot of chunk unnamed-chunk-6](figure/unnamed-chunk-6-1.png)
 
 Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -221,7 +201,7 @@ ggplot(data = Updated_activity_sum, aes(stepsperday))+
 ## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![plot of chunk unnamed-chunk-11](figure/unnamed-chunk-11-1.png)
 
 
 Yes, these values are different from first part of assignment since NA is replaced by mean value for that particular interval.
@@ -266,6 +246,6 @@ ggplot(data = UADayType, aes(x= interval, y = steps))+
   facet_wrap(DayType~., nrow = 2)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-13-1.png)<!-- -->
+![plot of chunk unnamed-chunk-13](figure/unnamed-chunk-13-1.png)
 
 ### Thank You for reviewing it
